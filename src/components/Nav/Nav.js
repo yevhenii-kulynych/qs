@@ -9,8 +9,6 @@ const Nav = () => {
             <h3 className="nav__logo">Logo</h3>
             <ul className="nav__list">
                 <Link to="/">Main</Link>
-                <Link to="/create">Create</Link>
-                <Link to="/edit">Edit</Link>
                 <Link to="/cart">Cart</Link>
             </ul>
         </nav>

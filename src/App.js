@@ -5,9 +5,8 @@ import MainView from './components/MainView/MainView'
 import CreateView from './components/CreateView/CreateView'
 import EditView from './components/EditView/EditView'
 import CartView from './components/CartView/CartView'
-
-
 import './App.css'
+
 
 function App() {
 return (

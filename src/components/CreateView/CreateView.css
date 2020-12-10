@@ -1,0 +1,12 @@
+
+
+.create_page {
+  padding: 2rem 2rem;
+}
+
+.create_page > input {
+  margin-right: 0.5rem;
+  border: 2px solid darkgoldenrod;
+  padding: 0.25rem;
+  font-family: 'Roboto';
+}

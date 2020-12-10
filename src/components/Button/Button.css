@@ -20,9 +20,14 @@
 }
 
 .add {
-  background-color: darkgreen;
+  background-color: #006400;
 }
 
 .create {
   background-color: cornflowerblue;
+}
+
+
+.disable {
+  background-color: lightslategrey;
 }

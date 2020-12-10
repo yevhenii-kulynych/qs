@@ -118,13 +118,6 @@
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
       "price": 900,
       "inCart": false
-    },
-    {
-      "id": 966272,
-      "title": "Some Title",
-      "price": 333,
-      "description": "Good thing",
-      "inCart": false
     }
   ],
   "cart": [
@@ -133,7 +126,7 @@
       "title": "Audi",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, qui?",
       "price": 100,
-      "quantity": 2
+      "quantity": 1
     }
   ]
 }

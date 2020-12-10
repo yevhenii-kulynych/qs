@@ -5,3 +5,10 @@
   flex-wrap: wrap;
   padding: 0 2rem;
 }
+
+.total {
+  font-size: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 2rem;
+}

@@ -17,8 +17,8 @@ const MainView = () => {
         const fetchData = async () => {
 
             try {
-             const data = await request('/products?_page=1&_limit=10')
-             
+              const data = await request('/products')
+             // const data = await request('/products?_page=1&_limit=10')
              setItems(data)
             } catch (error) {
                 
@@ -26,8 +26,6 @@ const MainView = () => {
          }
          fetchData()
     }, [request])
-
-    console.log(items);
 
     return (
       <>
@@ -41,9 +39,17 @@ const MainView = () => {
             {
                 items.map((el, index) => {
 
-                  if (!el.inCart) {
-                    return <Card key={index} title={el.title} price={el.price} description={el.description} inCart={ false }/>
-                  }
+                  return <Card
+                    id={el.id}
+                    item={ el }
+                    key={ index }
+                    title={ el.title }
+                    price={ el.price }
+                    description={ el.description }
+                    inCart={ false }
+                    isDisabled={ el.inCart }
+                    setItems={ setItems }
+                  />
                 })
             }
         </div>

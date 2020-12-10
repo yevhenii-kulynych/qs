@@ -2,10 +2,22 @@
 
 .item {
     width: 32%;
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
     border: 1px solid lightblue;
     margin-right: 1rem;
     margin-bottom: 1rem;
+}
+
+.item__inner > h2 {
+    color: rebeccapurple;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.item__inner > p {
+    color: lightslategrey;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .btns-wrapper {
