@@ -1,6 +1,13 @@
 
+
+.nav__filter {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
 .products {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    padding: 0 2rem;
 }

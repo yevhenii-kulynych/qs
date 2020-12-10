@@ -1,8 +1,29 @@
 
 
 .item {
-    width: 100%;
-    max-width: 18%;
-    padding: 2rem;
+    width: 32%;
+    padding: 4rem 1rem;
     border: 1px solid lightblue;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btns-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+
+.qauntity_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.qauntity_wrapper > button {
+    padding: 0.25rem;
+}
+
+.qauntity_wrapper > p {
+    margin: 0 0.5rem;
 }
