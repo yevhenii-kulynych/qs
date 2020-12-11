@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useHttp } from "../../hoocks/useHttp"
+import { useHistory } from 'react-router-dom'
 import Button from "../Button/Button"
 import './EditView.css'
 
@@ -7,7 +8,7 @@ import './EditView.css'
 const EditView = props => {
 
   const [item, setItem] = useState([])
-  const [id, setId] = useState([])
+  const [id, setId] = useState('')
   const [title, setTitle] = useState('')
   const [price, setPrice] = useState('')
   const [description, setDescription] = useState('')
@@ -16,20 +17,16 @@ const EditView = props => {
   const inputTitle = useRef(null)
   const inputPrice = useRef(null)
   const inputDescription = useRef(null)
+  const history = useHistory()
+
+  const redirect = () => {
+    history.push('/')
+  }
 
   const getID = () => {
 
     const id = JSON.parse(localStorage.getItem('id')) || null
     return id
-  }
-
-  const getData = async () => {
-
-    const data = await request(`/products/${id}`)
-    // setTitle(data.title)
-    // setPrice(data.price)
-    // setDescription(data.description)
-    return data
   }
 
   const changeTitleHandler = event => {
@@ -47,34 +44,40 @@ const EditView = props => {
   useEffect(() => {
 
     setId(getID)
-    setItem(getData)
-    inputTitle.current.value = item.title
-    inputPrice.current.value = item.price
-    inputDescription.current.value = item.description
-    console.log('render')
-  }, [])
+
+    request(`/products/${id}`)
+      .then(data => {
+        setItem(data)
+
+        inputTitle.current.value = data.title
+        inputPrice.current.value = data.price
+        inputDescription.current.value = data.description
+      })
+
+  }, [id])
 
 
   const saveData = async () => {
+
     const temp = {}
     temp.id = id
-    temp.title = title.trim()
-    temp.price = parseInt(price)
-    temp.description = description.trim()
+    temp.title = inputTitle.current.value.trim()
+    temp.price = parseInt(inputPrice.current.value)
+    temp.description = inputDescription.current.value.trim()
 
-    //const sendData = await request(`/products/${props.id}`, 'PATCH', JSON.stringify(temp), {'Content-Type': 'application/json'})
-
+    const sendData = await request(`/products/${item.id}`, 'PATCH', JSON.stringify(temp), {'Content-Type': 'application/json'})
+    redirect()
   }
 
   const simpleValidate = () => {
 
-    if (title.length < 3) {
+    if (inputTitle.current.value.length < 3) {
 
       alert('Title is too short. Min length is 3 symbols')
-    } else if (isNaN(parseInt(price))) {
+    } else if (isNaN(parseInt(inputPrice.current.value))) {
 
       alert('Price is`t valid')
-    } else if (description.length < 10) {
+    } else if (inputDescription.current.value.length < 10) {
 
       alert('Description is too short. Min length is 10 symbols')
     } else {

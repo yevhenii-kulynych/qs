@@ -5,7 +5,6 @@ import { useHttp } from "../../hoocks/useHttp"
 import './Card.css'
 
 
-
 const Card = (props) => {
 
     const [quantity, setQuantity] = useState(0)

@@ -9,7 +9,7 @@ const Button = props => {
     useEffect(() => {
 
       setDisable(props.isDisabled)
-    },[disable])
+    },[disable, props.isDisabled])
 
     switch (props.name) {
       case 'Edit':

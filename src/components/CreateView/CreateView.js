@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from "../Button/Button"
 import { useHistory } from 'react-router-dom'
-import { useHttp } from "../../hoocks/useHttp";
+import { useHttp } from "../../hoocks/useHttp"
 import './CreateView.css'
 
 

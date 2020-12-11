@@ -1,0 +1,17 @@
+
+.pagination__wrapper {
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pagination__wrapper .pagination {
+  display: flex;
+}
+
+.pagination > li {
+  font-size: 2rem;
+  border: 1px solid lightskyblue;
+  padding: 0.5rem;
+  cursor: pointer;
+}
