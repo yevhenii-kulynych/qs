@@ -24,7 +24,7 @@ const MainView = () => {
 
       setIsLoading(true)
       const filteredItems = currentPosts.filter((a) => {
-        
+
         if (a.title.match(reg)) return true
       })
 
